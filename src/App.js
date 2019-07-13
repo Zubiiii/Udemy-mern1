@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, matchPath } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Layout/Navbar";
 import Users from "./components/Users/Users";
@@ -35,10 +35,12 @@ class App extends Component {
 
   setAlert = (msg, type) => {
     this.setState({ alert: { msg, type } });
-    setTimeout(() => this.setState({ alert: null }), 8000);
+    setTimeout(() => this.setState({ alert: null }), 5000);
   };
 
   clearUsers = () => this.setState({ users: [], loading: false });
+
+  clearAlert = () => this.setState({ alert: null });
 
   render() {
     return (
