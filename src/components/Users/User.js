@@ -8,6 +8,8 @@ export class User extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     const {
       name,
       company,

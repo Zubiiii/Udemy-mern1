@@ -58,13 +58,13 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <div className="container">
-            <Alert alert={this.state.alert} />
             <Switch>
               <Route
                 exact
                 path="/"
                 render={props => (
                   <Fragment>
+                    <Alert alert={this.state.alert} />
                     <Search
                       searchUser={this.searchUser}
                       clearUsers={this.clearUsers}
