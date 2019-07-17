@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../Layout/Spinner";
+import Repos from "../Repos/Repos";
 
 export class User extends Component {
   componentDidMount() {
     this.props.getUser(this.props.match.params.login);
+    this.props.getUserRepos(this.props.match.params.login);
   }
 
   render() {
-    console.log(this.props);
-
     const {
       name,
       company,
@@ -25,7 +25,7 @@ export class User extends Component {
       public_gists,
       hireable
     } = this.props.user;
-
+    const { repos } = this.props;
     const { loading } = this.props;
 
     if (loading) return <Spinner />;
@@ -91,6 +91,16 @@ export class User extends Component {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="card">
+          <h3>Repos:</h3>
+          <Repos repos={repos} />
+        </div>
+        <div className="card text-center">
+          <div className="badge badge-dark">Followers: {followers}</div>
+          <div className="badge badge-dark">Following: {following}</div>
+          <div className="badge badge-dark">Public Repos: {public_repos}</div>
+          <div className="badge badge-dark">Public Gists: {public_gists}</div>
         </div>
       </Fragment>
     );

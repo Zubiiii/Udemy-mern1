@@ -238,6 +238,17 @@ img {
   border-radius: 5px;
 }
 
+.badgerepo {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  text-align: center;
+  margin: 0.3rem;
+  background: var(--light-color);
+  color: #fff;
+  border-radius: 5px;
+}
+
 .alert {
   padding: 0.7rem;
   margin: 1rem 0;
